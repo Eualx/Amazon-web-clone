@@ -1,0 +1,15 @@
+Icon converter ICO converter
+npm install @mui/material @emotion/react @emotion/styled
+npm install numeral
+inistal fadeloader
+
+stap for firbase
+install firbase 
+npm install -g firebase-tools
+npm list -g
+firebase login
+firbase init
+
+{
+    "clientSecret": "pi_3PHRFMHfsHpqQCr51CHEUQ3K_secret_3SRuygAyiwmJ0zhuVEOcUfXTA"
+}
