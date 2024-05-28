@@ -2,6 +2,8 @@
     position: sticky;
     top:0;
     z-index: 100;
+  
+
 }
 .header_container{
     background-color: #1a1a1a;
@@ -11,18 +13,20 @@
     color:white;
 height: 60px;
 width: 100%;
+/* position: relative; */
+
 
 }
 .logo_container{
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 150px;
+    max-width: 120px;
 }
 .logo_container img{ 
-    width: 70%;
+    width: 80%;
     padding-top: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     vertical-align: middle;
    
 }
@@ -32,12 +36,14 @@ justify-content: center;
 align-items: center;
 gap: 5px;
 font-weight: bold;
-padding:  10px ;
-
 } 
  .delivery h1{
-    font-size: 10px;
+    font-size: 12px;
     font-weight: normal;
+    color: #D4D4D4;
+}
+.delivery span {
+    font-size: 14px;
 }
  .search{
     display: flex;
@@ -45,7 +51,7 @@ padding:  10px ;
     justify-content: center;
     border-radius: 10px;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
     flex: 1;
     position: relative;
 } 
@@ -84,12 +90,11 @@ outline: 1px solid white;
     color: #1a1a1a;
     overflow-x: hidden;
  
-   
 }
 .order_container{
     display: flex;
     align-items: center;
-    max-width: 450px;
+    max-width: 550px;
     gap: 10px;
 }
 .order_container a{
@@ -99,11 +104,87 @@ outline: 1px solid white;
 .order_container p{
     font-size: 10px;
 }
+
 .language{
     width:100px;
     display: flex;
     padding: 10px;
+    
+   
 }
+.language_container{
+    position: relative;
+}
+.language_detail_container { 
+    /* display: none; */
+   top: 40px;
+   position: absolute;
+    background-color: white;
+    color: black;
+    width: 200px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.language_detail_container a:hover{
+    color: #F3A847;
+    text-decoration: underline;
+}
+.language_detail_container ul li{
+    list-style: none;
+    padding: 5px ;
+    display: flex;
+    gap: 5px;
+  
+}
+
+.language_list{
+    padding-left: 10px ;
+    padding-top: 10px;
+}
+.language_list a{
+    color:#09090a;
+    font-size: 12px;
+    display: flex;
+    
+}
+.language_link{
+    display: flex;
+    gap: 10px;
+    padding-bottom:5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-top: 3px solid rgb(241, 239, 239);
+}
+.language_link a{
+    color: blue;
+    font-size: smaller;
+    
+}
+.language_change{
+    display: flex;
+justify-content: space-between; 
+padding-bottom: 10px;
+padding-top: 5px;
+padding-left: 10px;
+border-bottom: 3px solid rgb(241, 239, 239);
+
+}
+.language_change a{
+    color: blue;
+    font-size: smaller;
+}
+.amzonshopping a{
+    color: blue;
+    padding-top: 25px;
+    align-items: center;
+    padding-left: 15px;
+}
+.amzonshopping{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 7px;
+}
+
 .language select{
     background-color: #1a1a1a;
     border: none;
@@ -116,10 +197,10 @@ outline: 1px solid white;
 .cart span{
     position: relative;
     font-weight: bold;
-    top: 0px;
+    top: -15px;
     font-size: 20px;
     background-color: black;
-    right: 16px;
+    right: 20px;
     color:orange
 }
 .order_container a:hover, .delivery:hover,.logo_container a:hover, .lower_container ul li:hover{
@@ -144,14 +225,16 @@ gap: 2px;
 align-items: center;
 }
 
+
 .slide{
     display: flex;
-    z-index: 100;
     position: fixed;
     top: 0;
-    width: 100%;
-    opacity: 0.50;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0,0, 0.7);
     z-index: 999;
+    
 
 }
 .menu_Container{
@@ -160,7 +243,18 @@ align-items: center;
     border: #1a1a1a;
     overflow-y: auto;
     height: 700px;
-    position: relative;
+    /* position: fixed; */
+    z-index: 10;
+}
+.backdrop{
+    width: 100%;
+    height: 700px;
+    position: fixed;
+    z-index: 8;
+    background-color: rgba(0, 0,0, 0.7);
+}
+body.noscroll{
+    overflow: hidden;
 }
 .signin{
     background-color: #232F3E;
@@ -177,6 +271,126 @@ align-items: center;
     font-size: larger;
     font-weight: bold;
 }
+
+.signin_detail{
+    position: absolute;
+   top: 48px;
+   right: 60px;
+    background-color: white;
+    color: #09090a;
+    width: 400px;
+    
+}
+.singout_upper{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    background-color:#E7F4F5;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.singin_upper a{
+    color: rgb(14, 14, 15);
+    padding-top: 10px;
+}
+.singin_upper{
+text-align: center;
+}
+.singin_upper button{
+  text-align: center;
+    border: none;
+    background: #F7CA00;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+   
+}
+.signin_bottom{
+    display: flex;
+   padding: 10px;
+   border-top:1px solid rgb(241, 239, 239) ;
+}
+.signin_bottom ul li:hover{
+color: #F3A847;
+text-decoration: underline;
+}
+.right{
+    border-left: 1px solid rgb(241, 239, 239) ;
+    padding-left: 20px;
+    margin-left: 80px;
+    
+}
+
+.signin_bottom ul li{
+    list-style: none;
+    font-size: 10px;
+    padding-top: 7px;
+    
+}
+.signOut a{
+    color: #09090a;
+}
+
+.profile_identifier_container{
+    background-color:  #FFFFFF;;
+    position: absolute;
+    text-align: center;
+    top:300px;
+    right: 400px;
+    left: auto;
+    width: 100%;
+    color: #09090a;
+    width: 420px;
+    height: 230px;
+    border-radius: 7px ;
+    z-index: 1;
+}
+.profile_background{
+    width: Vw;
+    max-width: Vh;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:0.8 ;
+}
+.id_top{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px ;
+    background-color:#F0F2F2 ;
+    border-radius: 7px;
+    
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    background-color:#F0F2F2 ;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+}
+.profile_detail{
+    display: flex;
+    gap: 10px;
+}
+.profile_identifier_container a{
+color: rgb(41, 14, 141);
+
+}
+.addProfile{
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
 .content{
     color: black;
     gap: 100px;

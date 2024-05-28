@@ -6,28 +6,29 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { TbWorld } from "react-icons/tb";
-import {animate, motion} from "framer-motion"
-
+import { motion} from "framer-motion"
 import classes from './Header.module.css'
-function LowerHeader() {
+function LowerHeader({t, i18n}) {
   const ref =useRef()
   const [sidebar, setSidebar]=useState(false)
   useEffect(()=>{
 document.body.addEventListener("click",(e)=>{
   if(e.target.contains(ref.current)){
     setSidebar(false)
-    document.body.classList.toggle('no-scroll');
+    
   }
 
 })
 
 }, [])
-
-
-  // const toggleSidebar = () => {
-  //   setSidebar(!sidebar);
-  //   document.body.classList.toggle('no-scroll');
-  // };
+const openSlider=()=>{
+  setSidebar(true)
+  document.body.classList.add(`${classes.noscroll}`)
+}
+const closeSlider=()=>{
+  setSidebar(false)
+  document.body.classList.remove(`${classes.noscroll}`)
+}
 
   return (
     <section className={classes.window}>
@@ -35,9 +36,10 @@ document.body.addEventListener("click",(e)=>{
     
     <div className={classes.lower_container}>
 <ul>
-    <li onClick={()=>setSidebar(true)}>
+    <li onClick={openSlider}>
   
     <CiMenuBurger  />
+        {/* <p>{t('words.all')} </p> */}
         <p>All</p>
     </li>
     <li>Today's Deals</li>
@@ -49,7 +51,10 @@ document.body.addEventListener("click",(e)=>{
 </div>
 {
   sidebar && (
-    <motion.div ref={ref}  initial={{x:-500, opacity:0}}  animate={{x:0,opacity:1}} transition={{duration:0.5}} className={classes.slide}>
+    <div className={classes.slidercontainer}>
+      
+    
+    <motion.div ref={ref}  initial={{x:-500, opacity:0}}  animate={{x:0,opacity:1}} transition={{duration:0.25}} className={classes.slide}>
       <div className={classes.menu_Container}>
         <div >
           <div className={classes.signin}>
@@ -111,11 +116,16 @@ document.body.addEventListener("click",(e)=>{
     
       </div>
     </div>
+    {
+      sidebar && (<div onClick={closeSlider} className={classes.backdrop}>
+        
+      </div>)
+    }
     <div className={classes.closing}>
 <IoMdClose size={35} onClick={()=>setSidebar(false)}/>
     </div>
        </motion.div>
-
+       </div>
   )
 }
 

@@ -1,16 +1,20 @@
 /* product card container */
-.card_product_nested_card{
+/* .card_product_nested_card{
     display: flex;
     background-color:#FFFFFF ;
     max-width: 300px;
     flex-wrap: wrap;
    justify-content: space-between;
-}
+} */
 /* .card_nested{
    
 } */
-.card_nested img{
+/* .card_nested img{
     width: 128%;
     height: 102px;
     object-fit: cover;
+} */
+.img{
+    width:250px;
+    height: 250px;
 }
