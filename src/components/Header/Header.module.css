@@ -84,7 +84,7 @@ outline: 1px solid white;
     border: 2px solid rgb(235, 161, 173);
 }
 .serach_dropdown{
-    width: 800px;
+    width: 700px;
     background-color: white;
     overflow-y: scroll;
     color: #1a1a1a;
@@ -112,18 +112,17 @@ outline: 1px solid white;
     
    
 }
-.language_container{
-    position: relative;
-}
+
 .language_detail_container { 
-    /* display: none; */
-   top: 40px;
+   top: 70px;
    position: absolute;
+   right: 200px;
     background-color: white;
     color: black;
     width: 200px;
     font-size: 12px;
     cursor: pointer;
+    z-index: 10;
 }
 .language_detail_container a:hover{
     color: #F3A847;
@@ -279,8 +278,19 @@ body.noscroll{
     background-color: white;
     color: #09090a;
     width: 400px;
+    z-index: 10;
     
 }
+.language_detail_container { 
+    top: 40px;
+    position: absolute;
+     background-color: white;
+     color: black;
+     width: 200px;
+     font-size: 12px;
+     cursor: pointer;
+     z-index: 10;
+ }
 .singout_upper{
     display: flex;
     justify-content: space-between;
@@ -338,6 +348,16 @@ text-decoration: underline;
 .signOut a{
     color: #09090a;
 }
+.container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0,0, 0.7);
+    z-index: 999;
+     
+}
+
 
 .profile_identifier_container{
     background-color:  #FFFFFF;;
@@ -351,14 +371,14 @@ text-decoration: underline;
     width: 420px;
     height: 230px;
     border-radius: 7px ;
-    z-index: 1;
+    z-index: 10;
 }
-.profile_background{
-    width: Vw;
-    max-width: Vh;
+.background{
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index:0.8 ;
+    z-index:8 ;
+    position: fixed;
 }
 .id_top{
     display: flex;

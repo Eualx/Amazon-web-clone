@@ -126,10 +126,11 @@ function Header() {
                 </select>
               </Link>
               {showdetail && (
-                <div
-                  ref={ref}
+                <div  className={classes.container}>
+                  <div ref={ref}
                   onMouseLeave={() => setShowdetail(false)}
-                  className={classes.language_detail_container}
+                  >
+                <div className={classes.language_detail_container}
                 >
                   <div className={classes.language_link}>
                     <div>Change language </div>
@@ -227,6 +228,13 @@ function Header() {
                     </div>
                   </div>
                 </div>
+                </div>
+                {showdetail && (
+                  <div className={classes.background}>
+
+                  </div>
+                )}
+                </div>
               )}
             </div>
 
@@ -241,6 +249,9 @@ function Header() {
                     {t('words.signout')}
                   </span>
                   {showSinin && (
+                    <div className={classes.container}>
+                      
+                    
                     <div
                       onMouseLeave={() => setShowSinin(false)}
                       className={classes.signinbackground}
@@ -286,16 +297,27 @@ function Header() {
                               <li>Music Library</li>
                               <li>Switch Account</li>
                               <li className={classes.signOut}>
-                                <Link to="/auth">Sign Out</Link>
+                                <Link onClick={() => auth.signOut()} to="">Sign Out</Link>
                               </li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
+                    {showSinin &&(
+                      <div  className={classes.background}>
+
+                      </div>
+                    )}
+
+
+                    </div>
                   )}
 
                   {manageprofile && (
+
+                    <div className={classes.container}>
+                     
                     <div className={classes.profile_identifier_container}>
                       <div className={classes.id_top}>
                         <h3>Who is shopping</h3>
@@ -329,6 +351,16 @@ function Header() {
                       </div>
       
                      </div>
+
+                     {
+                  manageprofile &&( <div onClick={() => setmangeProfile(false)} className={classes.background}>
+                    
+                  </div>)
+                 }
+
+                     </div>
+
+                
                   )}
                  
                 </>
@@ -339,6 +371,9 @@ function Header() {
                  {t('words.Account_list')}
                   </span>
                   {showSinin && (
+                    <div className={classes.container}>
+                      
+                    
                     <div
                       onMouseLeave={() => setShowSinin(false)}
                       className={classes.signin_detail}
@@ -381,6 +416,12 @@ function Header() {
                           </ul>
                         </div>
                       </div>
+                    </div>
+                    {showSinin && (
+                      <div  className={classes.background}>
+                        
+                      </div>
+                    )}
                     </div>
                   )}
                 </>
