@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import classes from "./Product.module.css";
 import Layout from "../../components/Layout/Layout";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -21,6 +20,7 @@ function ProductDetail() {
       })
       .catch((err) => {
         console.log(err);
+        setIsLoading(false)
       });
   }, []);
   return (
