@@ -255,7 +255,7 @@ function Header() {
               {user ? (
                 <>
 
-                  <p>
+                  <p onMouseOver={() => setShowSinin(true)}>
                     {t("words.hello")} {user?.email?.split("@")[0]}
                   </p>
                   <span
