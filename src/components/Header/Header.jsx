@@ -130,7 +130,7 @@ function Header() {
                       <div className={classes.language_link}>
                         <div>{t('words.Change_language')} </div>
                         <span>
-                          <a href="">{t('words.Learn_More')}</a>
+                          <Link to="">{t('words.Learn_More')}</Link>
                         </span>
                       </div>
                       <div className={classes.language_list}>
@@ -138,12 +138,12 @@ function Header() {
                           <li>
                             <IoRadioButtonOffSharp />{" "}
                             <span>
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("en")}
-                                href=""
+                                to=""
                               >
                                 English-EN
-                              </a>
+                              </Link>
                             </span>
                           </li>
                           <br />
@@ -152,48 +152,48 @@ function Header() {
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("es")}
-                                href=""
+                                to=""
                               >
                                 español - ES
-                              </a>{" "}
-                              <a href=""></a>
+                              </Link>{" "}
+                              <Link to=""></Link>
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
                               {" "}
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("ar")}
-                                href=""
+                                to=""
                               >
                                 لعربيةا- AR
-                              </a>{" "}
+                              </Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("am")}
-                                href=""
+                                to=""
                               >
                                 አማርኛ-አማ
-                              </a>{" "}
+                              </Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">עברית - HE</a>{" "}
+                              <Link to="">עברית - HE</Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">한국어 - KO</a>{" "}
+                              <Link to="">한국어 - KO</Link>{" "}
                             </span>
                           </li>
                           <li>
@@ -205,13 +205,13 @@ function Header() {
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">中文 (简体) - ZH </a>
+                              <Link to="">中文 (简体) - ZH </Link>
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">中文 (繁體) - ZH</a>{" "}
+                              <Link to="">中文 (繁體) - ZH</Link>{" "}
                             </span>
                           </li>
                           <br />
@@ -220,14 +220,14 @@ function Header() {
                       <div className={classes.language_link}>
                         <p>{t('words.change_currency')} </p>
                         <span>
-                          <a href="">{t('words.Learn_More')}</a>
+                          <Link to="">{t('words.Learn_More')}</Link>
                         </span>
                       </div>
                       <div className={classes.language_change}>
                         <p>$ USD - U.S.Dollar</p>
                         <span>
                           {" "}
-                          <a href="">{t('words.change')}</a>
+                          <Link to="">{t('words.change')}</Link>
                         </span>
                       </div>
                       <div>

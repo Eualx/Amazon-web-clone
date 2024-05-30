@@ -6,6 +6,7 @@ import { IoRadioButtonOffSharp } from "react-icons/io5";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import LowerFooter from "./LowerFooter";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const ref = useRef();
@@ -174,12 +175,12 @@ function Footer() {
                           <li>
                             <IoRadioButtonOffSharp />{" "}
                             <span>
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("en")}
-                                href=""
+                                to=""
                               >
                                 English-EN
-                              </a>
+                              </Link>
                             </span>
                           </li>
                           <br />
@@ -188,12 +189,12 @@ function Footer() {
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("es")}
-                                href=""
+                                to=""
                               >
                                 español - ES
-                              </a>{" "}
+                              </Link>{" "}
                               <a href=""></a>
                             </span>
                           </li>
@@ -201,48 +202,48 @@ function Footer() {
                             <IoRadioButtonOffSharp />
                             <span>
                               {" "}
-                              <a
+                              <Link
                                 onClick={() => handlechangeLanguage("ar")}
-                                href=""
+                                to=""
                               >
                                 لعربيةا- AR
-                              </a>{" "}
+                              </Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">Deuch - DE</a>{" "}
+                              <Link to="">Deuch - DE</Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">עברית - HE</a>{" "}
+                              <Link to="">עברית - HE</Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">한국어 - KO</a>{" "}
+                              <Link to="">한국어 - KO</Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">português - PT</a>{" "}
+                              <Link to="">português - PT</Link>{" "}
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">中文 (简体) - ZH </a>
+                              <Link to="">中文 (简体) - ZH </Link>
                             </span>
                           </li>
                           <li>
                             <IoRadioButtonOffSharp />
                             <span>
-                              <a href="">中文 (繁體) - ZH</a>{" "}
+                              <Link to="">中文 (繁體) - ZH</Link>{" "}
                             </span>
                           </li>
                           <br />
