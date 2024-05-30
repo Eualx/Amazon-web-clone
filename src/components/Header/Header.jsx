@@ -14,18 +14,18 @@ import { IoAddCircleSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
-
 function Header() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
 
-  const [t, i18n] = useTranslation("")
- 
+  const [t, i18n] = useTranslation("");
+
   const handlechangeLanguage = (lang) => {
-    i18n.changeLanguage(lang)}
- 
+    i18n.changeLanguage(lang);
+  };
+
   const [showdetail, setShowdetail] = useState(false);
   const [showSinin, setShowSinin] = useState(false);
   const [showAll, setshowAll] = useState(false);
@@ -43,12 +43,8 @@ function Header() {
   // console.log(basket)
   return (
     <section className={classes.fixed}>
-      <section>
-                     
-     
-                    
-
-        <div className={classes.header_container}>
+      <section >
+        <div className={classes.header_container} >
           <div className={classes.logo_container}>
             <Link to="/">
               <img
@@ -62,15 +58,15 @@ function Header() {
               <FmdGoodOutlinedIcon size={15} />
             </span>
             <div>
-              <h1>{t('words.deliver')}</h1>
-              <span>{t('words.ethiopia')}</span>
+              <h1>{t("words.deliver")}</h1>
+              <span>{t("words.ethiopia")}</span>
             </div>
           </div>
 
           <div className={classes.search}>
             <select onClick={() => setshowAll(!showAll)} name="" id="">
               <option value="" hidden>
-              {t('words.all')}  
+                {t("words.all")}
               </option>
               {showAll && (
                 <>
@@ -105,345 +101,349 @@ function Header() {
                 </>
               )}
             </select>
-            <input type="text" placeholder={t('words.searchamazon')} />
+            <input type="text" placeholder={t("words.searchamazon")} />
             <BsSearch size={38} />
           </div>
 
-          <div className={classes.order_container}>
-            <div className={classes.language_container}>
-              <Link
-                onMouseOver={() => setShowdetail(true)}
+          <div className={classes.order_container} >
+            <div className={classes.language_container} onMouseLeave={() => setShowdetail(false)} >   
+                <Link 
+                 
                 to=""
                 className={classes.language}
               >
+
                 <img
                   src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
                   width={15}
                   alt=""
                 />
-                <select name="" id="">
-                  <option value="">EN</option>
+                <select onMouseOver={() => setShowdetail(true)} name="" id="">
+                  <option value="">{t('words.lan')}</option>
                 </select>
               </Link>
+             
               {showdetail && (
-                <div  className={classes.container}>
-                  <div ref={ref}
-                  onMouseLeave={() => setShowdetail(false)}
-                  >
-                <div className={classes.language_detail_container}
-                >
-                  <div className={classes.language_link}>
-                    <div>Change language </div>
-                    <span>
-                      <a href="">Learn more</a>
-                    </span>
-                  </div>
-                  <div className={classes.language_list}>
-                    <ul>
-                      <li>
-                        <IoRadioButtonOffSharp />{" "}
+                <div className={classes.container}  >
+                  <div>
+                    <div className={classes.language_detail_container}>
+                      <div className={classes.language_link}>
+                        <div>{t('words.Change_language')} </div>
                         <span>
-                          <a onClick={()=>handlechangeLanguage("en")} href="">English-EN</a>
+                          <a href="">{t('words.Learn_More')}</a>
                         </span>
-                      </li>
-                      <br />
-                      <hr />
-                      <br />
-                      <li>
-                        <IoRadioButtonOffSharp />
+                      </div>
+                      <div className={classes.language_list}>
+                        <ul>
+                          <li>
+                            <IoRadioButtonOffSharp />{" "}
+                            <span>
+                              <a
+                                onClick={() => handlechangeLanguage("en")}
+                                href=""
+                              >
+                                English-EN
+                              </a>
+                            </span>
+                          </li>
+                          <br />
+                          <hr />
+                          <br />
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a
+                                onClick={() => handlechangeLanguage("es")}
+                                href=""
+                              >
+                                español - ES
+                              </a>{" "}
+                              <a href=""></a>
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              {" "}
+                              <a
+                                onClick={() => handlechangeLanguage("ar")}
+                                href=""
+                              >
+                                لعربيةا- AR
+                              </a>{" "}
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a
+                                onClick={() => handlechangeLanguage("am")}
+                                href=""
+                              >
+                                አማርኛ-አማ
+                              </a>{" "}
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a href="">עברית - HE</a>{" "}
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a href="">한국어 - KO</a>{" "}
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a href="">português - PT</a>{" "}
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a href="">中文 (简体) - ZH </a>
+                            </span>
+                          </li>
+                          <li>
+                            <IoRadioButtonOffSharp />
+                            <span>
+                              <a href="">中文 (繁體) - ZH</a>{" "}
+                            </span>
+                          </li>
+                          <br />
+                        </ul>
+                      </div>
+                      <div className={classes.language_link}>
+                        <p>{t('words.change_currency')} </p>
                         <span>
-                          <a onClick={()=>handlechangeLanguage("es")}href="">español - ES</a> <a href=""></a>
+                          <a href="">{t('words.Learn_More')}</a>
                         </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
+                      </div>
+                      <div className={classes.language_change}>
+                        <p>$ USD - U.S.Dollar</p>
                         <span>
                           {" "}
-                          <a onClick={()=>handlechangeLanguage("ar")} href="">لعربيةا- AR</a>{" "}
+                          <a href="">{t('words.change')}</a>
                         </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">Deuch - DE</a>{" "}
-                        </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">עברית - HE</a>{" "}
-                        </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">한국어 - KO</a>{" "}
-                        </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">português - PT</a>{" "}
-                        </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">中文 (简体) - ZH </a>
-                        </span>
-                      </li>
-                      <li>
-                        <IoRadioButtonOffSharp />
-                        <span>
-                          <a href="">中文 (繁體) - ZH</a>{" "}
-                        </span>
-                      </li>
-                      <br />
-                    </ul>
-                  </div>
-                  <div className={classes.language_link}>
-                    <p>Change Currency </p>
-                    <span>
-                      <a href="">Learn more</a>
-                    </span>
-                  </div>
-                  <div className={classes.language_change}>
-                    <p>$ USD - U.S.Dollar</p>
-                    <span>
-                      {" "}
-                      <a href="">change</a>
-                    </span>
-                  </div>
-                  <div>
-                    <div className={classes.amzonshopping}>
-                      <img
-                        src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
-                        width={15}
-                        alt=""
-                      />{" "}
-                      <span> Your are shopping on Amazon.com</span>
-                      <br />
-                      <br />
-                      <a href="">Change country/region</a>
+                      </div>
+                      <div>
+                        <div className={classes.amzonshopping}>
+                          <img
+                            src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
+                            width={15}
+                            alt=""
+                          />{" "}
+                          <span> {t('words.Your_are_shopping_on_Amazon_com')}</span>
+                          <br />
+                          <br />
+                          <a href="">{t('words.Change_country_region')}</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                </div>
-                {showdetail && (
-                  <div className={classes.background}>
-
-                  </div>
-                )}
+                  
                 </div>
               )}
             </div>
 
+
             <Link to={!user && "/auth"}>
               {user ? (
                 <>
-                  <p>{t('words.hello')} {user?.email?.split("@")[0]}</p>
+
+                  <p>
+                    {t("words.hello")} {user?.email?.split("@")[0]}
+                  </p>
                   <span
                     onClick={() => auth.signOut()}
                     onMouseOver={() => setShowSinin(true)}
-                  >
-                    {t('words.signout')}
-                  </span>
-                  {showSinin && (
-                    <div className={classes.container}>
-                      
+                   
                     
-                    <div
-                      onMouseLeave={() => setShowSinin(false)}
-                      className={classes.signinbackground}
-                    >
-                      <div className={classes.signin_detail}>
-                        <div className={classes.singout_upper}>
-                          <div>
-                            <p>Who is shooping? select a profile.</p>
+                  >
+                    {t("words.signout")}
+                  </span>
+                
+                  {showSinin && (
+                    <div className={classes.container}   >
+                      <div
+                        
+                        className={classes.signinbackground}
+                      onMouseLeave={() => setShowSinin(false)} >
+                        <div className={classes.signin_detail}>
+                          <div className={classes.singout_upper}>
+                            <div>
+                              <p> {t("words.Whois_shooping_select_a_profile")}</p>
+                            </div>
+                            <div>
+                              <h5 onClick={() => setmangeProfile(true)}>
+                                {" "}
+                                {t("words.Manage_profile")}{" "}
+                                <span>
+                                  <MdOutlineKeyboardArrowRight />
+                                </span>
+                              </h5>
+                            </div>
                           </div>
-                          <div>
-                            <h5 onClick={() => setmangeProfile(true)}>
-                              {" "}
-                              Manage profile{" "}
-                              <span>
-                                <MdOutlineKeyboardArrowRight />
-                              </span>
-                            </h5>
-                          </div>
-                        </div>
-                        <div className={classes.signin_bottom}>
-                          <div className={classes.left}>
-                            <h5> Your List</h5>
-                            <ul>
-                              <li>Creat a List</li>
-                              <li>Find a List or Registry</li>
-                              <li>Your Saved Books</li>
-                            </ul>
-                          </div>
+                          <div className={classes.signin_bottom}>
+                            <div className={classes.left}>
+                              <h5>  {t("words.Your_List")}</h5>
+                              <ul>
+                                <li>{t("words.Creat_a_List")}</li>
+                                <li>{t("words.Find_a_List_or_Registry")}</li>
+                                <li>{t("words.Your_Saved_Books")}</li>
+                              </ul>
+                            </div>
 
-                          <div className={classes.right}>
-                            <h5> Your Account </h5>
-                            <ul>
-                              <li>Account</li>
-                              <li>Orders</li>
-                              <li>Recommendation</li>
-                              <li>Browsing History</li>
-                              <li>Watchlist</li>
-                              <li>Video purchase & Rentals</li>
-                              <li>Kindle Unlimited</li>
-                              <li>Content & Devices</li>
-                              <li>Subscribe & Save Items</li>
-                              <li>Membership & Subscription</li>
-                              <li>Music Library</li>
-                              <li>Switch Account</li>
-                              <li className={classes.signOut}>
-                                <Link onClick={() => auth.signOut()} to="">Sign Out</Link>
-                              </li>
-                            </ul>
+                            <div className={classes.right}>
+                              <h5> {t("words.Your_Account")} </h5>
+                              <ul>
+                                <li>{t("words.Account")}</li>
+                                <li>{t("words.Orders")}</li>
+                                <li>{t("words.Recommendation")}</li>
+                                <li>{t("words.Browsing_History")}</li>
+                                <li>{t("words.Watchlist")}</li>
+                                <li>{t("words.Video_purchase_Rentals")}</li>
+                                <li>{t("words.Kindle_Unlimited")}</li>
+                                <li>{t("words.Content_Devices")}</li>
+                                <li>{t("words.Subscribe_Save_Items")}</li>
+                                <li>{t("words.Membership_Subscription")}</li>
+                                <li>{t("words.Music_Library")}</li>
+                                <li>{t("words.Switch_Account")}</li>
+                                <li className={classes.signOut}>
+                                  <Link onClick={() => auth.signOut()} to="">
+                                  {t("words.signout")}
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    {showSinin &&(
-                      <div  className={classes.background}>
-
-                      </div>
-                    )}
-
-
+                      {showSinin && <div className={classes.background}></div>}
                     </div>
                   )}
 
                   {manageprofile && (
-
                     <div className={classes.container}>
-                     
-                    <div className={classes.profile_identifier_container}>
-                      <div className={classes.id_top}>
-                        <h3>Who is shopping</h3>
-                        <IoMdClose
+                      <div className={classes.profile_identifier_container}>
+                        <div className={classes.id_top}>
+                          <h3>{t("words.Whois_shooping")}</h3>
+                          <IoMdClose
+                            onClick={() => setmangeProfile(false)}
+                            size={25}
+                          />
+                        </div>
+                        <div className={classes.profile}>
+                          <div className={classes.profile_detail}>
+                            <div>
+                              <MdAccountCircle color="blue" size={35} />
+                            </div>
+                            <div>
+                              {user?.email?.split("@")[0]}
+                              <br />
+                              {t("words.Account_holder")}
+                            </div>
+                          </div>
+                          <div>
+                            <a href="">{t("words.View")}</a>
+                          </div>
+                        </div>
+                        <div className={classes.addProfile}>
+                          <div>
+                            <IoAddCircleSharp color="gray" size={35} />
+                          </div>
+                          <div>
+                            <a href="">{t("words.Add_profile")}</a>
+                          </div>
+                        </div>
+                      </div>
+
+                      {manageprofile && (
+                        <div
                           onClick={() => setmangeProfile(false)}
-                          size={25}
-                        />
-                      </div>
-                      <div className={classes.profile}>
-                        <div className={classes.profile_detail}>
-                          <div>
-                            <MdAccountCircle color="blue" size={35} />
-                          </div>
-                          <div>
-                            {user?.email?.split("@")[0]}
-                            <br />
-                            Account holder
-                          </div>
-                        </div>
-                        <div>
-                          <a href="">View</a>
-                        </div>
-                      </div>
-                      <div className={classes.addProfile}>
-                        <div>
-                          <IoAddCircleSharp color="gray" size={35} />
-                        </div>
-                        <div>
-                          <a href="">Add profile</a>
-                        </div>
-                      </div>
-      
-                     </div>
-
-                     {
-                  manageprofile &&( <div onClick={() => setmangeProfile(false)} className={classes.background}>
-                    
-                  </div>)
-                 }
-
-                     </div>
-
-                
+                          className={classes.background}
+                        ></div>
+                      )}
+                    </div>
                   )}
-                 
                 </>
               ) : (
                 <>
-                  <p>{t('words.Signin')} ,</p>
+                  <p>{t("words.Signin")} ,</p>
                   <span onMouseOver={() => setShowSinin(true)}>
-                 {t('words.Account_list')}
+                    {t("words.Account_list")}
                   </span>
                   {showSinin && (
                     <div className={classes.container}>
-                      
-                    
-                    <div
-                      onMouseLeave={() => setShowSinin(false)}
-                      className={classes.signin_detail}
-                    >
-                      <div className={classes.singin_upper}>
-                        <button>
-                          <Link to="/auth">Sign in</Link>
-                        </button>
-                        <p>
-                          New customer?
-                          <span>
-                            <Link to="/auth"> start here</Link>
-                          </span>
-                        </p>
-                      </div>
-
-                      <div className={classes.signin_bottom}>
-                        <div className={classes.left}>
-                          <h5> Your List</h5>
-                          <ul>
-                            <li>Creat a List</li>
-                            <li>Find a List or Registry</li>
-                          </ul>
+                      <div
+                        onMouseLeave={() => setShowSinin(false)}
+                        className={classes.signin_detail}
+                      >
+                        <div className={classes.singin_upper}>
+                          <button>
+                            <Link to="/auth"> {t("words.Signin")}</Link>
+                          </button>
+                          <p>
+                            {t("words.New_customer")}
+                            <span>
+                              <Link to="/auth" style={{ color:"#598E9E"}}> {t("words.Start_here")}</Link>
+                            </span>
+                          </p>
                         </div>
 
-                        <div className={classes.right}>
-                          <h5> Your Account </h5>
-                          <ul>
-                            <li>Account</li>
-                            <li>Orders</li>
-                            <li>Recommendation</li>
-                            <li>Browsing History</li>
-                            <li>Watchlist</li>
-                            <li>Video purchase & Rentals</li>
-                            <li>Kindle Unlimited</li>
-                            <li>Content & Devices</li>
-                            <li>Subscribe & Save Items</li>
-                            <li>Membership & Subscription</li>
-                            <li>Music Library</li>
-                          </ul>
+                        <div className={classes.signin_bottom}>
+                          <div className={classes.left}>
+                            <h5>{t("words.Your_List")}</h5>
+                            <ul>
+                            <li>{t("words.Creat_a_List")}</li>
+                                <li>{t("words.Find_a_List_or_Registry")}</li>
+                            </ul>
+                          </div>
+
+                          <div className={classes.right}>
+                            <h5> {t("words.Your_Account")}</h5>
+                            <ul>
+                            <li>{t("words.Account")}</li>
+                                <li>{t("words.Orders")}</li>
+                                <li>{t("words.Recommendation")}</li>
+                                <li>{t("words.Browsing_History")}</li>
+                                <li>{t("words.Watchlist")}</li>
+                                <li>{t("words.Video_purchase_Rentals")}</li>
+                                <li>{t("words.Kindle_Unlimited")}</li>
+                                <li>{t("words.Content_Devices")}</li>
+                                <li>{t("words.Subscribe_Save_Items")}</li>
+                                <li>{t("words.Membership_Subscription")}</li>
+                                <li>{t("words.Music_Library")}</li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {showSinin && (
-                      <div  className={classes.background}>
-                        
-                      </div>
-                    )}
+                      {showSinin && <div className={classes.background}></div>}
                     </div>
                   )}
                 </>
               )}
             </Link>
+           
 
             <Link to="/orders">
-              <p>{t('words.return')}</p>
-              <span>{t('words.orders')}</span>
+              <p>{t("words.return")}</p>
+              <span>{t("words.orders")}</span>
             </Link>
 
             <Link to="/cart" className={classes.cart}>
               <FaCartArrowDown size={35} />
 
               <span>{totalItem}</span>
-              {t('words.cart')}
-              {/* Cart */}
+             {t("words.cart")}
             </Link>
           </div>
         </div>
-        <LowerHeader />
-
+        <LowerHeader t={t} i18n={i18n} />
       </section>
     </section>
   );

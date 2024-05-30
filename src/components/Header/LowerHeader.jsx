@@ -39,14 +39,14 @@ const closeSlider=()=>{
     <li onClick={openSlider}>
   
     <CiMenuBurger  />
-        {/* <p>{t('words.all')} </p> */}
-        <p>All</p>
+        <p>{t('words.all')} </p>
+        {/* <p>All</p> */}
     </li>
-    <li>Today's Deals</li>
-    <li>Customer Service</li>
-    <li>Registry</li>
-    <li>Gift Cards</li>
-    <li>Sell</li>
+    <li>{t('words.todaydeals')}</li>
+    <li>{t('words.customerservice')}</li>
+    <li>{t('words.registry')}</li>
+    <li>{t('words.giftcards')}</li>
+    <li>{t('words.sell')}</li>
 </ul>
 </div>
 {
@@ -59,56 +59,56 @@ const closeSlider=()=>{
         <div >
           <div className={classes.signin}>
          < MdAccountCircle size={35}/>
-         <Link to="/auth">Hello, Sign In</Link>
+         <Link to="/auth">{t('words.hello')}, {t('words.Signin')}</Link>
           
           </div>
         <div className={classes.content}>
-          <h3>Digital Conten & Devices</h3>
+          <h3>{t('words.digitalconten_device')}</h3>
           <ul>
-            <li><span>Amazon Music</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Kindle E-reader & Books</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Amazon Appstore</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Amazon_Music')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Kindle_E_reader_Books')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Amazon_Appstore')}</span><MdKeyboardArrowRight size={25} /></li>
           </ul>
         </div>
         <div className={classes.content}>
-          <h3>Shop by Department</h3>
+          <h3>{t('words.Shop_by_Department')}</h3>
           <ul>
-            <li><span>Electronics </span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Computer</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Smart Home</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Art & Crafts</span><MdKeyboardArrowRight size={25} /></li>
-            <li className={classes.icons}><span>See all</span><MdOutlineKeyboardArrowDown /></li>
+            <li><span>{t('words.Electronics')} </span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Computer')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Smart_Home')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Art_Crafts')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li className={classes.icons}><span>{t('words.See_all')}</span><MdOutlineKeyboardArrowDown /></li>
           </ul>
         </div>
         <div className={classes.content}>
-          <h3>Programs & Features</h3>
+          <h3>{t('words.Art_Crafts')}</h3>
           <ul>
-            <li><span>Gift Cards</span> <MdKeyboardArrowRight size={25} /></li>
-            <li><span>Shop By Interest</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>Amazon Appstore</span><MdKeyboardArrowRight size={25} /></li>
-            <li><span>International Shopping</span><MdKeyboardArrowRight size={25} /></li>
-            <li className={classes.icons}><span>See all</span><MdOutlineKeyboardArrowDown /></li>
+            <li><span>{t('words.giftcards')}</span> <MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Shop_By_Interest')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.Amazon_Appstore')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li><span>{t('words.International_Shopping')}</span><MdKeyboardArrowRight size={25} /></li>
+            <li className={classes.icons}><span>{t('words.See_all')}</span><MdOutlineKeyboardArrowDown /></li>
           </ul>
         </div>
         <div className={classes.content}>
           <ul>
-          <h3>Help & Setting</h3>
+          <h3>{t('words.Help_Setting')}</h3>
             <li>
-            your Account
+            {t('words.your_Account')}
 
             </li>
             <li className={classes.icons}>
-            <TbWorld /> <span>English</span></li>
+            <TbWorld /> <span>{t('words.English')}</span></li>
           <li >
             <a href=""><img
                 src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
                 width={25}
                 alt=""
-              /> <span>United States</span></a>
+              /> <span>{t('words.United_State')}</span></a>
           </li>
-          <li>Customer Service</li>
+          <li>{t('words.Customer_Service')}</li>
           
-         <li>Sign in</li>
+         <li>{t('words.Signin')}</li>
           </ul>
          
           
